@@ -17,6 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/layout.css" rel="stylesheet">
     <link href="assets/css/product-list.css" rel="stylesheet" >
+    <link href="assets/css/featured_products.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -52,12 +53,15 @@
         </div>
     </div>
 
-    <div class="container" ui-view>
+    <div class="container" ui-view>  /** loads the entire view here **/
 
     </div> <!-- /container -->
     <script src = "bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src = "app.js"></script>
     <script src = "route.js"></script>
+    <script src = "controller/home-controller.js"></script>
     <script src = "controller/product-list-controller.js"></script>
+    <script src = "controller/product-details-controller.js"></script>
+    <script src = "services/product-service.js"></script>
     </body>
 </html>

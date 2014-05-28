@@ -3,9 +3,13 @@
 	
 	var app = angular.module('MyStore');
 
-	app.controller('ProductList', function($scope, $http) {
-		$http.get('assets/json/products.json')
-			.then(
+	app.controller('ProductList', function($scope, ProductService) {
+		// function errorCallback(reason) {
+		//	$scope.errorMessage = reason.statusText;
+		//};
+
+
+			ProductService.getProducts().then(
 				function(response) {
 					
 					$scope.products = response.data;
@@ -22,8 +26,8 @@
 
 			);
 
-		$http.get('assets/json/product-filters.json')
-			.then(
+		
+			ProductService.getProductFilters().then(
 				function(response) {
 					$scope.filters = response.data;
 				}

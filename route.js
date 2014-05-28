@@ -9,6 +9,7 @@
         $stateProvider
             .state('home', {
                 url: '/', /**when it matches the url, it activates this state **/
+                controller: 'homeController',
                 templateUrl: 'views/home.html'
             })
             .state('products', {
@@ -16,6 +17,12 @@
                 controller: 'ProductList',
                 templateUrl: 'views/product-list.html'
             })
+            .state('product', {
+                url: '/product/:id',
+                controller: 'ProductDetails',
+                templateUrl: 'views/product-detail.html'
+            })
+            
 			.state('about', {
                 url: '/about',
                 templateUrl: ''
