@@ -25,8 +25,17 @@
     </div>
 </div>
 
+
+
 <div class="row">
-     <a>Return to Products</a>
+    <div class = "col-sm-offset-2 col-sm-12 featured">
+        <div class = "small">
+            <div class = "three" ng-repeat = "product in featuredProducts | limitTo: 3">
+             <ms-featured-product product="product"></ms-featured-product>
+            </div>
+        </div>
+    </div>
+    <a>Return to Products</a>
 </div>
 
 </body>

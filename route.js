@@ -12,6 +12,7 @@
                 controller: 'homeController',
                 templateUrl: 'views/home.html'
             })
+            
             .state('products', {
                 url: '/products',
                 controller: 'ProductList',
