@@ -21,6 +21,18 @@ module.exports = function(app) {
 
 	// products api route
 	app.get('/api/products', function(req, res) {
+
+
+		/* var params ={
+	
+		};
+		/* checks for queried string of feature on the url */
+		/*if(req.body.featured != undefined){
+			params.isFeatured = req.body.featured;
+		} 
+
+		find(params */
+		
 		// use mongoose to get all products in the database
 		mongoose.model('Product').find(function(err, products) {
  
@@ -32,6 +44,20 @@ module.exports = function(app) {
 		});
 	});
 	
+	// featured products route
+
+	app.get('/api/products/featured', function(req, res) {
+
+
+		mongoose.model('Product').find({isFeatured: true}, function(err, products) {
+			if (err)
+				res.send(err);
+		
+			res.send(products);
+			 
+		});
+        	
+	});
  
 	// route to handle creating (app.post)
 	// route to handle delete (app.delete)

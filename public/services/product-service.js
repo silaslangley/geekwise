@@ -16,7 +16,15 @@
 				// Return the promise
 				return $http.get('/api/products');
 			},
+
+
+
+			getFeaturedProducts: function() {
+				return $http.get('/api/products/featured');
+			},
  
+			/* /api/products/featured?featured=true */
+
 			getProductFilters: function() {
 				// Return the promise
 				return $http.get('assets/json/product-filters.json');

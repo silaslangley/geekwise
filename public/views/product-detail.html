@@ -19,9 +19,9 @@
         <p ng-show="product.isSpecial" ng-bind="product.specialPrice"></p>
         <p ng-bind="product.description"></p>
         <p ng-bind="'Inventory: ' + product.inventory"></p>
-        <div>
-            <button type="button" class="btn btn-primary">To Cart</button>
-        </div>
+        
+        <ms-product-add-cart-button product="product"></ms-product-add-cart-button>
+        
     </div>
 </div>
 

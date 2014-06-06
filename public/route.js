@@ -34,5 +34,11 @@
                 templateUrl: ''
             });
 
+            .state('cart', {
+                url: '/cart',
+                controller: 'CartController',
+                templateUrl: 'views/cart.html'
+            })
+
     });
 })(window.angular);

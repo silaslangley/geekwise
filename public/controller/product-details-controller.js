@@ -17,6 +17,7 @@
         } */
 
 
+
         $scope.product;
         ProductService.getProducts().then(function(response) {
         	var products = response.data;
