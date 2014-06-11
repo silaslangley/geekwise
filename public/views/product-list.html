@@ -18,12 +18,19 @@
 		<div class="row form-group">
 		    <div class="input-group">
 		        <input type="text" class="form-control" ng-model="productSearch.title">
-	            <span class="input-group-btn">
-	              <button type="button" class="btn btn-default">search</button>
+		        <span class="input-group-btn">
+	              <button type="button" class="btn btn-default">search by title</button>
 	            </span>
+		        <input type="text" class="form-control" ng-model="productSearch.color">
+	            <span class="input-group-btn">
+	              <button type="button" class="btn btn-default">search by color</button>
+	            </span>
+	            
 		    </div>
-		    <p class="help-block" ng-show="productSearch.title.length">Showing results for <strong ng-bind="productSearch.title"></strong></p>
+		    <p class="help-block" ng-show="productSearch.title.length">Showing results for <strong ng-bind="productSearch.title" ng-bind="productSearch.color"></strong></p>
 		</div>
+
+		<ms-mini-cart></ms-mini-cart>
 	  <!-- loop over products -->
 		<div class="product-box" ng-repeat="product in products | filter:productSearch">
 		  <!-- Product title -->
@@ -43,12 +50,19 @@
 					</div>
 					<div ui-sref-active="active">
 						<ms-product-details-button product-id="{{product.guid}}"></ms-product-details-button>
+						<br>
+						<br>
+					
 						<ms-product-add-cart-button product="product"></ms-product-add-cart-button>
+						<!-- <a ui-sref="cart" class="tocart">To Cart</a> -->
 						
-						<a href="#" class="tocart">To Cart</a>
+						
 					</div>
+
 				</div>
 			</div>
 		</div>
+
+		<ms-mini-cart></ms-mini-cart>
 	</div>
 </div>

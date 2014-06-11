@@ -24,5 +24,5 @@
 			//}   this is another way do it -- instead of productId: '@' in scope:
 			// method for getting the scope, getting the actual element, and getting the attribute
 		};
-	})
+	});
 }) (window.angular);

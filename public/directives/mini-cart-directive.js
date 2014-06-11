@@ -17,13 +17,9 @@
 				scope.cartSubtotal = CartService.getCartSubtotal;
 					// Returns the subtotal form the CartService
  
-				};
- 
 				scope.itemCount =  CartService.getItemCount;
 					// Return the item count from the CartService
-					return 1; // static value to display cart temporarily
-				
- 
+			}
 		};
 	});
  

@@ -29,10 +29,11 @@
                 url: '/about',
                 templateUrl: ''
             })
+            
             .state('contact', {
                 url: '/contact',
                 templateUrl: ''
-            });
+            })
 
             .state('cart', {
                 url: '/cart',

@@ -5,9 +5,12 @@
 	// Inject in the ProductService
     app.controller('CartController', function($scope, CartService) {
  
+	    $scope.items = CartService.getItems();
+
 	    // Set the items on the scope to the items in the ProductService
-	    $scope.items;
  
+	    $scope.getItemCount = CartService.getItemCount;
+
 	    $scope.addItem = CartService.addItem;
 
 	    /* function(item) {
@@ -21,19 +24,15 @@
 		    // Remove the item using the ProductService
  
 	    // };
+
+	    $scope.emptyCart = CartService.emptyCart;
  
-	    $scope.cartSubtotal = function() {
-		    CartService.getCartSubtotal();
+	    $scope.cartSubtotal = CartService.getCartSubtotal;
 
 		    // Returns the cartSubtotal from the ProductService
  
-	    };
- 
-	    $scope.cartTotal = function() {
-	    	CartService.getCartTotal();
-		    // Returns the cartTotal from the ProductService
-	    }
- 
+		$scope.cartTotal = CartService.getCartTotal;
+
     });
  
 })(window.angular);
