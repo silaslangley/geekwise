@@ -19,15 +19,16 @@
 		    <div class="input-group">
 		        <input type="text" class="form-control" ng-model="productSearch.title">
 		        <span class="input-group-btn">
-	              <button type="button" class="btn btn-default">search by title</button>
+	              <button id="titleSearchButton" type="button" class="btn btn-default">search by title</button>
 	            </span>
+	        
 		        <input type="text" class="form-control" ng-model="productSearch.color">
 	            <span class="input-group-btn">
 	              <button type="button" class="btn btn-default">search by color</button>
 	            </span>
 	            
 		    </div>
-		    <p class="help-block" ng-show="productSearch.title.length">Showing results for <strong ng-bind="productSearch.title" ng-bind="productSearch.color"></strong></p>
+		    <p class="help-block" ng-show="productSearch.title.length || productSearch.color.length">Showing results for <strong ng-bind="productSearch.title "></strong> <strong ng-bind="productSearch.color"></strong></p>
 		</div>
 
 		<ms-mini-cart></ms-mini-cart>
@@ -63,6 +64,6 @@
 			</div>
 		</div>
 
-		<ms-mini-cart></ms-mini-cart>
+
 	</div>
 </div>

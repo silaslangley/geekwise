@@ -3,6 +3,7 @@ module.exports = function(app) {
 	// Require mongoose dependency
 	var mongoose = require('mongoose');
  
+ 	var passport = require('passport');
 	/* ======================= server routes ====================== */
 	// handle things like api calls
 	// authentication routes
@@ -43,7 +44,7 @@ module.exports = function(app) {
 			res.send(products); // return all nerds in JSON format
 		});
 	});
-	
+
 	// featured products route
 
 	app.get('/api/products/featured', function(req, res) {
@@ -62,6 +63,31 @@ module.exports = function(app) {
 	// route to handle creating (app.post)
 	// route to handle delete (app.delete)
  
+ // logout API route
+	app.get('/api/logout', function(req, res, next) {
+		req.logout();
+		res.send(200);
+	});
+ 
+	// login API route
+	app.post('/api/login', passport.authenticate('local'), function(req, res) {
+		res.cookie('user', JSON.stringify(req.user));
+		res.send(req.user);
+	});
+ 
+	// signup API route
+	app.post('/api/signup', function(req, res, next) {
+		var User = mongoose.model('User');
+		var user = new User({
+			email: req.body.email,
+			password: req.body.password
+		});
+		user.save(function(err) {
+			if (err) return next(err);
+			res.send(200);
+		});
+	});
+
 	/* ========================= frontend routes ======================= */
 	// route to handle all angular requests
 	app.get('*', function(req, res) {
