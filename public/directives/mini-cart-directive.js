@@ -14,10 +14,10 @@
 			templateUrl: 'templates/mini-cart.html',
 			link: function(scope, elem, attr) {
  
-				scope.cartSubtotal = CartService.getCartSubtotal;
+				scope.getCartSubtotal = CartService.getCartSubtotal;
 					// Returns the subtotal form the CartService
  
-				scope.itemCount =  CartService.getItemCount;
+				scope.getItemCount =  CartService.getItemCount;
 					// Return the item count from the CartService
 			}
 		};
