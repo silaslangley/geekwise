@@ -45,6 +45,10 @@
 			// }
 		// });
 
+		$scope.checkout = function() { // better practice to do it this way than the way above
+			CartService.checkout();
+		}
+
     });
  
 })(window.angular);
